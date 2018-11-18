@@ -33,21 +33,28 @@ public class MainActivity extends AppCompatActivity {
         dodawanie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                resultNumber = num1 + num2;
-                resultView.setText(String.valueOf(resultNumber));
-
+                try {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    resultNumber = num1 + num2;
+                    resultView.setText(String.valueOf(resultNumber));
+                }catch(Exception e){
+                    resultView.setText("0");
+                }
             }
 
         });
         odejmowanie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                resultNumber = num1 - num2;
-                resultView.setText(String.valueOf(resultNumber));
+                try {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    resultNumber = num1 - num2;
+                    resultView.setText(String.valueOf(resultNumber));
+                }catch(Exception e){
+                    resultView.setText("0");
+             }
 
             }
 
@@ -55,21 +62,29 @@ public class MainActivity extends AppCompatActivity {
         mnozenie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                resultNumber = num1 * num2;
-                resultView.setText(String.valueOf(resultNumber));
-
+                try {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    resultNumber = num1 * num2;
+                    resultView.setText(String.valueOf(resultNumber));
+                }catch(Exception e){
+                    resultView.setText("0");
+                }
             }
 
         });
         dzielenie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1 = Integer.parseInt(number1.getText().toString());
-                num2 = Integer.parseInt(number2.getText().toString());
-                resultNumber = num1 / num2;
-                resultView.setText(String.valueOf(resultNumber));
+                try {
+                    num1 = Integer.parseInt(number1.getText().toString());
+                    num2 = Integer.parseInt(number2.getText().toString());
+                    resultNumber = num1 / num2;
+                    resultView.setText(String.valueOf(resultNumber));
+                }catch(Exception e){
+                    resultView.setText("nie mozna");
+                 }
+
 
             }
 
