@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     num1 = Integer.parseInt(number1.getText().toString());
                     num2 = Integer.parseInt(number2.getText().toString());
                     resultNumber = num1 / num2;
+                    /////
                     resultView.setText(String.valueOf(resultNumber));
                 }catch(Exception e){
                     resultView.setText("nie mozna");
