@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     resultNumber = num1 / num2;
                     resultView.setText(String.valueOf(resultNumber));
                 }catch(Exception e){
-                    resultView.setText("nie mozna");
+                    resultView.setText("błąd");
                 }
 
 
