@@ -1,93 +1,86 @@
 package com.example.sebastian.kalkulatorprosty;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+
+import org.mariuszgromada.math.mxparser.Expression;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView resultView;
-    EditText number1, number2;
-    Button dodawanie, dzielenie, mnozenie, odejmowanie;
-    float resultNumber;
-    int num1, num2;
+    StringBuilder textE = new StringBuilder();
+    ArrayList<String> history = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        resultView =(TextView) findViewById(R.id.resultView);
 
-        number1 = (EditText) findViewById(R.id.number0);
-        number2 = (EditText) findViewById(R.id.number1);
-
-        dodawanie = (Button) findViewById(R.id.dodawanie);
-        odejmowanie = (Button) findViewById(R.id.odjemowanie);
-        mnozenie = (Button) findViewById(R.id.mnozenie);
-        dzielenie = (Button) findViewById(R.id.dzielenie);
-
-        dodawanie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    num1 = Integer.parseInt(number1.getText().toString());
-                    num2 = Integer.parseInt(number2.getText().toString());
-                    resultNumber = num1 + num2;
-                    resultView.setText(String.valueOf(resultNumber));
-                }catch(Exception e){
-                    resultView.setText("0");
-                }
-            }
-
-        });
-        odejmowanie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    num1 = Integer.parseInt(number1.getText().toString());
-                    num2 = Integer.parseInt(number2.getText().toString());
-                    resultNumber = num1 - num2;
-                    resultView.setText(String.valueOf(resultNumber));
-                }catch(Exception e){
-                    resultView.setText("0");
-             }
-
-            }
-
-        });
-        mnozenie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    num1 = Integer.parseInt(number1.getText().toString());
-                    num2 = Integer.parseInt(number2.getText().toString());
-                    resultNumber = num1 * num2;
-                    resultView.setText(String.valueOf(resultNumber));
-                }catch(Exception e){
-                    resultView.setText("0");
-                }
-            }
-
-        });
-        dzielenie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    num1 = Integer.parseInt(number1.getText().toString());
-                    num2 = Integer.parseInt(number2.getText().toString());
-                    resultNumber = num1 / num2;
-                    resultView.setText(String.valueOf(resultNumber));
-                }catch(Exception e){
-                    resultView.setText("błąd");
-                }
-
-
-            }
-
-        });
     }
+    public void refreshText()
+    {
+        TextView textView = findViewById(R.id.ViewM);
+        textView.setText(textE.toString());
+    }
+
+    public void addToEquation(View view)
+    {
+        int lengthOfEguqtion = textE.length()-1;
+        TextView button = (TextView)view;
+        String character = button.getText().toString();
+        if(lengthOfEguqtion>14)
+        {
+            return;
+        }
+        textE.append(character);
+        refreshText();
+    }
+    public void calculateEquation(View view)
+    {
+        Expression expression = new Expression(textE.toString());
+        double result = expression.calculate();
+
+        TextView textView = findViewById(R.id.ViewM);
+        textView.setText(String.valueOf(result));
+
+        history.add(textE.toString()+"="+result);
+        textE.delete(0,textE.length());
+    }
+    public void clearOne(View view)
+    {
+        int lengthEquation = textE.length();
+        if(lengthEquation<1) {
+            return;
+        }
+        else
+        {
+            textE.delete(textE.length() - 1, textE.length());
+            refreshText();
+        }
+    }
+    public void clearAll(View view)
+    {
+        int lengthEquation = textE.length();
+        if(lengthEquation<1) {
+            return;
+        }
+        else {
+            textE.delete(0, textE.length());
+            refreshText();
+        }
+    }
+    public void goHistory(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, StoryActivity.class);
+        startActivity(intent);
+    }
+
 }

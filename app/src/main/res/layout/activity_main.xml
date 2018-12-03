@@ -1,86 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
 
-    <EditText
-        android:id="@+id/number0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="66dp"
-        android:ems="10"
-        android:hint="liczba1"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/resultView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/buttonClear2"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="282dp"
+        android:layout_marginTop="398dp"
+        android:onClick="clearAll"
+        android:text="CA"
+        android:textSize="30sp" />
 
-    <EditText
-        android:id="@+id/number1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:ems="10"
-        android:hint="liczba2"
-        android:inputType="number"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/number0"
-        app:layout_constraintTop_toBottomOf="@+id/number0" />
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="339dp"
+        android:onClick="clearOne"
+        android:text="C"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="279dp"
+        android:onClick="addToEquation"
+        android:text="+"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonSub"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="219dp"
+        android:onClick="addToEquation"
+        android:text="-"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonStory"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="455dp"
+        android:onClick="goHistory"
+        android:text="ST"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonMulti"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="108dp"
+        android:onClick="addToEquation"
+        android:text="*"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button0"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="394dp"
+        android:onClick="addToEquation"
+        android:text="0"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="108dp"
+        android:layout_toEndOf="@+id/button2"
+        android:onClick="addToEquation"
+        android:text="3"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="204dp"
+        android:onClick="addToEquation"
+        android:text="4"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="204dp"
+        android:onClick="addToEquation"
+        android:text="5"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="396dp"
+        android:onClick="calculateEquation"
+        android:text="="
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="300dp"
+        android:onClick="addToEquation"
+        android:text="7"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="300dp"
+        android:onClick="addToEquation"
+        android:text="8"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="300dp"
+        android:onClick="addToEquation"
+        android:text="9"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="396dp"
+        android:onClick="addToEquation"
+        android:text="."
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="206dp"
+        android:onClick="addToEquation"
+        android:text="6"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="108dp"
+        android:onClick="addToEquation"
+        android:text="2"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/buttonDev"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="163dp"
+        android:onClick="addToEquation"
+        android:text="/"
+        android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/resultView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="357dp"
-        android:text="Wynik"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/odjemowanie"
-        app:layout_constraintStart_toStartOf="@+id/number1"
-        app:layout_constraintTop_toBottomOf="@+id/number0" />
-
-    <Button
-        android:id="@+id/dodawanie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:layout_marginEnd="37dp"
-        android:text="+"
-        app:layout_constraintEnd_toStartOf="@+id/odjemowanie"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/odjemowanie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:text="-"
-        app:layout_constraintEnd_toEndOf="@+id/number1"
-        app:layout_constraintTop_toBottomOf="@+id/resultView" />
-
-    <Button
-        android:id="@+id/mnozenie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/ViewM"
+        android:layout_width="354dp"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="15dp"
-        android:text="*"
-        app:layout_constraintStart_toStartOf="@+id/dodawanie"
-        app:layout_constraintTop_toBottomOf="@+id/dodawanie" />
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/dzielenie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="/"
-        app:layout_constraintStart_toStartOf="@+id/odjemowanie"
-        app:layout_constraintTop_toBottomOf="@+id/odjemowanie" />
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/button1"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="108dp"
+        android:onClick="addToEquation"
+        android:text="1"
+        android:textSize="36sp" />
+</RelativeLayout>
