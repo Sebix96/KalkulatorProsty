@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.ViewM);
         textView.setText(String.valueOf(result));
 
+        DatabaseHelper database = new DatabaseHelper(this);
+        database.addData(textE.toString()+" = "+result);
         history.add(textE.toString()+"="+result);
         textE.delete(0,textE.length());
     }
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     {
         int lengthEquation = textE.length();
         if(lengthEquation<1) {
+            refreshText();
             return;
         }
         else
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     {
         int lengthEquation = textE.length();
         if(lengthEquation<1) {
+            refreshText();
             return;
         }
         else {
