@@ -9,13 +9,37 @@
 
 
     <Button
+        android:id="@+id/buttonBracket2"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="424dp"
+        android:onClick="addToEquation"
+        android:text=")"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/buttonBracket "
+        android:layout_width="68dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="424dp"
+        android:onClick="addToEquation"
+        android:text="("
+        android:textSize="36sp" />
+
+    <Button
         android:id="@+id/buttonClear2"
         android:layout_width="74dp"
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="282dp"
-        android:layout_marginTop="398dp"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="400dp"
         android:onClick="clearAll"
         android:text="CA"
         android:textSize="30sp" />
@@ -26,8 +50,8 @@
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="281dp"
-        android:layout_marginTop="339dp"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="341dp"
         android:onClick="clearOne"
         android:text="C"
         android:textSize="30sp" />
@@ -38,8 +62,8 @@
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="281dp"
-        android:layout_marginTop="279dp"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="281dp"
         android:onClick="addToEquation"
         android:text="+"
         android:textSize="30sp" />
@@ -50,20 +74,20 @@
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="281dp"
-        android:layout_marginTop="219dp"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="221dp"
         android:onClick="addToEquation"
         android:text="-"
         android:textSize="30sp" />
 
     <Button
         android:id="@+id/buttonStory"
-        android:layout_width="74dp"
-        android:layout_height="56dp"
-        android:layout_alignParentStart="true"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="455dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="424dp"
+        android:layout_toEndOf="@+id/buttonBracket2"
         android:onClick="goHistory"
         android:text="ST"
         android:textSize="30sp" />
@@ -74,7 +98,7 @@
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="281dp"
+        android:layout_marginStart="251dp"
         android:layout_marginTop="108dp"
         android:onClick="addToEquation"
         android:text="*"
@@ -82,22 +106,22 @@
 
     <Button
         android:id="@+id/button0"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="394dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="346dp"
         android:onClick="addToEquation"
         android:text="0"
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="13dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="108dp"
         android:layout_toEndOf="@+id/button2"
         android:onClick="addToEquation"
@@ -106,107 +130,107 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="187dp"
         android:onClick="addToEquation"
         android:text="4"
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="187dp"
         android:onClick="addToEquation"
         android:text="5"
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
-        android:layout_alignParentStart="true"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="191dp"
-        android:layout_marginTop="396dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="346dp"
+        android:layout_toEndOf="@+id/button0"
         android:onClick="calculateEquation"
         android:text="="
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="268dp"
         android:onClick="addToEquation"
         android:text="7"
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="268dp"
         android:onClick="addToEquation"
         android:text="8"
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
-        android:layout_alignParentStart="true"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="268dp"
+        android:layout_toEndOf="@+id/button8"
         android:onClick="addToEquation"
         android:text="9"
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="396dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="346dp"
         android:onClick="addToEquation"
         android:text="."
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
-        android:layout_alignParentStart="true"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="206dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="187dp"
+        android:layout_toEndOf="@+id/button5"
         android:onClick="addToEquation"
         android:text="6"
         android:textSize="36sp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="102dp"
+        android:layout_marginStart="83dp"
         android:layout_marginTop="108dp"
         android:onClick="addToEquation"
         android:text="2"
@@ -218,8 +242,8 @@
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="281dp"
-        android:layout_marginTop="163dp"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="165dp"
         android:onClick="addToEquation"
         android:text="/"
         android:textSize="30sp" />
@@ -232,14 +256,14 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="4dp"
         android:layout_marginTop="15dp"
-        android:textSize="30sp"
+        android:textSize="36sp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="78dp"
-        android:layout_height="85dp"
+        android:layout_width="68dp"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
