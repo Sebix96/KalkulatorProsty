@@ -14,7 +14,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     StringBuilder textE = new StringBuilder();
-    ArrayList<String> history = new ArrayList<>();
+
 
 
 
@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         DatabaseHelper database = new DatabaseHelper(this);
         database.addData(textE.toString()+" = "+result);
-        history.add(textE.toString()+"="+result);
         textE.delete(0,textE.length());
     }
     public void clearOne(View view)
