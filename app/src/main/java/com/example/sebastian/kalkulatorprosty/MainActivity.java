@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.mariuszgromada.math.mxparser.Expression;
 
-import java.util.ArrayList;
-import java.util.List;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    StringBuilder textE = new StringBuilder();
+    StringBuilder textEquation = new StringBuilder();
 
 
 
@@ -28,55 +28,70 @@ public class MainActivity extends AppCompatActivity {
     public void refreshText()
     {
         TextView textView = findViewById(R.id.ViewM);
-        textView.setText(textE.toString());
+        textView.setText(textEquation.toString());
     }
 
     public void addToEquation(View view)
     {
-        int lengthOfEguqtion = textE.length()-1;
+        int lengthOfEguqtion = textEquation.length()-1;
         TextView button = (TextView)view;
         String character = button.getText().toString();
         if(lengthOfEguqtion>14)
         {
             return;
         }
-        textE.append(character);
+        textEquation.append(character);
         refreshText();
     }
     public void calculateEquation(View view)
     {
-        Expression expression = new Expression(textE.toString());
-        double result = expression.calculate();
+        int lengthEquation = textEquation.length();
+        if(lengthEquation>0){
+            Expression expression = new ExpressionBuilder(textEquation.toString()).build();
+            double result;
+            try {
+                result = expression.evaluate();
+            } catch (Throwable cause) {
+                result = Double.NaN;
+            }
 
-        TextView textView = findViewById(R.id.ViewM);
-        textView.setText(String.valueOf(result));
+            TextView textView = findViewById(R.id.ViewM);
+            textView.setText(String.valueOf(result));
+            if(Double.isNaN(result)){
 
-        DatabaseHelper database = new DatabaseHelper(this);
-        database.addData(textE.toString()+" = "+result);
-        textE.delete(0,textE.length());
+             }
+             else{
+                DatabaseHelper database = new DatabaseHelper(this);
+                database.addData(textEquation.toString()+" = "+result);
+            }
+            textEquation.delete(0, textEquation.length());
+        }
+        else{
+            return;
+        }
     }
     public void clearOne(View view)
     {
-        int lengthEquation = textE.length();
+        int lengthEquation = textEquation.length();
         if(lengthEquation<1) {
             refreshText();
             return;
         }
         else
         {
-            textE.delete(textE.length() - 1, textE.length());
+            textEquation.delete(textEquation.length() - 1, textEquation.length());
             refreshText();
         }
     }
     public void clearAll(View view)
     {
-        int lengthEquation = textE.length();
+        int lengthEquation = textEquation.length();
         if(lengthEquation<1) {
             refreshText();
             return;
         }
         else {
-            textE.delete(0, textE.length());
+            textEquation.delete(0, textEquation.length());
             refreshText();
         }
     }

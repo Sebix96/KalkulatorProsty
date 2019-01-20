@@ -17,7 +17,7 @@ public class StoryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DatabaseHelper database = new DatabaseHelper(this);
