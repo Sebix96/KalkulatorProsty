@@ -41,7 +41,7 @@
         android:layout_marginStart="251dp"
         android:layout_marginTop="3dp"
         android:onClick="clearAll"
-        android:text="CA"
+        android:text="CE"
         android:textSize="30sp" />
 
     <Button
@@ -89,7 +89,7 @@
         android:layout_marginTop="424dp"
         android:layout_toEndOf="@+id/buttonBracket2"
         android:onClick="goHistory"
-        android:text="ST"
+        android:text="HS"
         android:textSize="30sp" />
 
     <Button
