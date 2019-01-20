@@ -46,29 +46,28 @@ public class MainActivity extends AppCompatActivity {
     public void calculateEquation(View view)
     {
         int lengthEquation = textEquation.length();
-        if(lengthEquation>0){
-            Expression expression = new ExpressionBuilder(textEquation.toString()).build();
-            double result;
-            try {
-                result = expression.evaluate();
-            } catch (Throwable cause) {
-                result = Double.NaN;
-            }
-
-            TextView textView = findViewById(R.id.ViewM);
-            textView.setText(String.valueOf(result));
-            if(Double.isNaN(result)){
-
-             }
-             else{
-                DatabaseHelper database = new DatabaseHelper(this);
-                database.addData(textEquation.toString()+" = "+result);
-            }
-            textEquation.delete(0, textEquation.length());
-        }
-        else{
+        if(lengthEquation<1){
             return;
         }
+        Expression expression = new ExpressionBuilder(textEquation.toString()).build();
+        double result;
+        try {
+            result = expression.evaluate();
+        } catch (Throwable cause) {
+            result = Double.NaN;
+        }
+
+        TextView textView = findViewById(R.id.ViewM);
+        textView.setText(String.valueOf(result));
+        if(Double.isNaN(result)){
+        }
+        else{
+            DatabaseHelper database = new DatabaseHelper(this);
+            database.addData(textEquation.toString()+" = "+result);
+        }
+        textEquation.delete(0, textEquation.length());
+
+
     }
     public void clearOne(View view)
     {
