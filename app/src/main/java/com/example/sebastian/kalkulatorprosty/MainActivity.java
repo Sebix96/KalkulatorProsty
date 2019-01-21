@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             DatabaseHelper database = new DatabaseHelper(this);
-            database.addData(textEquation.toString()+" = "+result);
+            database.setData(textEquation.toString()+" = "+result);
         }
         textEquation.delete(0, textEquation.length());
 
@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         int lengthEquation = textEquation.length();
         if(lengthEquation<1) {
             refreshText();
-            return;
         }
         else
         {
@@ -87,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         int lengthEquation = textEquation.length();
         if(lengthEquation<1) {
             refreshText();
-            return;
         }
         else {
             textEquation.delete(0, textEquation.length());

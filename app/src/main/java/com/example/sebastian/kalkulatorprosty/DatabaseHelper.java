@@ -1,46 +1,23 @@
 package com.example.sebastian.kalkulatorprosty;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-
+import com.example.sebastian.kalkulatorprosty.Database.Database;
 import java.util.ArrayList;
 
+public class DatabaseHelper extends Database{
 
-public class DatabaseHelper extends SQLiteOpenHelper{
-
-    public static final String database_name ="Historia";
-    public static final String database_table ="Historiaa";
-    public static final String database_id_column ="ID";
-    public static final String database_patch ="Equation";
-
-    private static final String database_entries =
-            "CREATE TABLE "+ database_table + "(" + database_id_column + " INTEGER PRIMARY KEY AUTOINCREMENT,"+ database_patch + " TEXT)";
-    private static final String database_entries_delete = "DROP TABLE IF EXISTS " + database_table;
-
-    public DatabaseHelper(Context context){
-        super(context, database_name, null, 1);
+    public DatabaseHelper(Context context) {
+        super(context);
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL(database_entries);
-
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(database_entries_delete);
-        onCreate(db);
-    }
-    public boolean addData(String TextE)
+    public boolean setData(String textEquation)
     {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(database_patch, TextE);
+        contentValues.put(database_patch, textEquation);
         if(database.insert(database_table, null, contentValues)==-1) {
             return false;
         }
