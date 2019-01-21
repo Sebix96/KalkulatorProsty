@@ -13,7 +13,7 @@ public class DatabaseHelper extends Database{
         super(context);
     }
 
-    public boolean addData(String textEquation)
+    public boolean setData(String textEquation)
     {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

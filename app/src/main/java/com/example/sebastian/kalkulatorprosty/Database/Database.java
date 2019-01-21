@@ -8,14 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class Database extends SQLiteOpenHelper {
-    public static final String database_name = "Historia";
-    public static final String database_table = "Historiaa";
-    public static final String database_id_column = "ID";
-    public static final String database_patch = "Equation";
+    private static final String database_name = "Historia";
+    protected static final String database_table = "Historiaa";
+    private static final String database_id_column = "ID";
+    protected static final String database_patch = "Equation";
 
-    public static final String database_entries =
+    private static final String database_entries =
             "CREATE TABLE " + database_table + "(" + database_id_column + " INTEGER PRIMARY KEY AUTOINCREMENT," + database_patch + " TEXT)";
-    public static final String database_entries_delete = "DROP TABLE IF EXISTS " + database_table;
+    protected static final String database_entries_delete = "DROP TABLE IF EXISTS " + database_table;
 
     public Database(Context context) {
         super(context, database_name, null, 1);
