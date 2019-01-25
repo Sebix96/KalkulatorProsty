@@ -25,7 +25,7 @@ public class StoryActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.ViewHistory);
         textView.setText(History);
     }
-    public void cleanStory(View view)
+    public void clearHistory(View view)
     {
         DatabaseHelper database = new DatabaseHelper(this);
         database.cleanDatebase();
