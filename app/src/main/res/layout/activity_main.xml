@@ -7,7 +7,6 @@
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-
     <Button
         android:id="@+id/buttonBracket2"
         android:layout_width="68dp"

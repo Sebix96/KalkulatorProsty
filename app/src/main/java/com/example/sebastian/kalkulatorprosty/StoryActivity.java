@@ -1,7 +1,6 @@
 package com.example.sebastian.kalkulatorprosty;
 
 
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,7 +16,6 @@ public class StoryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DatabaseHelper database = new DatabaseHelper(this);
@@ -25,8 +23,8 @@ public class StoryActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.ViewHistory);
         textView.setText(History);
     }
-    public void clearHistory(View view)
-    {
+
+    public void clearHistory(View view) {
         DatabaseHelper database = new DatabaseHelper(this);
         database.cleanDatebase();
         TextView textView = findViewById(R.id.ViewHistory);
