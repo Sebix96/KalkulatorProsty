@@ -49,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
         if(lengthEquation<1){
             return;
         }
-        Expression expression = new ExpressionBuilder(textEquation.toString()).build();
         double result;
         try {
-            result = expression.evaluate();
-        } catch (Throwable cause) {
+        Expression expression = new ExpressionBuilder(textEquation.toString()).build();
+        result = expression.evaluate();
+        } catch (Exception e) {
             result = Double.NaN;
         }
 

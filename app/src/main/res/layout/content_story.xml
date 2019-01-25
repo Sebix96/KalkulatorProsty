@@ -10,22 +10,22 @@
 
     <TextView
         android:id="@+id/ViewHistory"
-        android:layout_width="275dp"
-        android:layout_height="333dp"
+        android:layout_width="287dp"
+        android:layout_height="406dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="116dp"
-        android:textSize="36sp"
+        android:layout_marginTop="43dp"
+        android:textSize="30sp"
         tools:layout_editor_absoluteX="41dp"
         tools:layout_editor_absoluteY="79dp" />
 
     <Button
-        android:id="@+id/cleanHistory"
+        android:id="@+id/clearHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="42dp"
-        android:onClick="cleanStory"
-        android:text="Clean" />
+        android:onClick="clearHistory"
+        android:text="Clear" />
 </RelativeLayout>
