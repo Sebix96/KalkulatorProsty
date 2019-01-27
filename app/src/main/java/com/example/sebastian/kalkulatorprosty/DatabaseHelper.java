@@ -18,8 +18,8 @@ class DatabaseHelper extends Database {
     public boolean setData(String textEquation) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(database_patch, textEquation);
-        if (database.insert(database_table, null, contentValues) == -1) {
+        contentValues.put(databasePath, textEquation);
+        if (database.insert(databaseTable, null, contentValues) == -1) {
             return false;
         } else {
             return true;
@@ -29,7 +29,7 @@ class DatabaseHelper extends Database {
 
     public ArrayList<String> getData() {
         SQLiteDatabase database = this.getWritableDatabase();
-        Cursor result = database.rawQuery("SELECT * FROM " + database_table, null);
+        Cursor result = database.rawQuery("SELECT * FROM " + databaseTable, null);
         ArrayList<String> listOfEquations = new ArrayList<>();
         while (result.moveToNext()) {
             listOfEquations.add(result.getString(1));
@@ -38,9 +38,9 @@ class DatabaseHelper extends Database {
 
     }
 
-    public void cleanDatebase() {
+    public void cleanData() {
         SQLiteDatabase database = this.getWritableDatabase();
-        database.execSQL(database_entries_delete);
+        database.execSQL(databaseEntriesDelete);
         onCreate(database);
     }
 }

@@ -15,7 +15,6 @@ public class StoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_story);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DatabaseHelper database = new DatabaseHelper(this);
@@ -26,7 +25,7 @@ public class StoryActivity extends AppCompatActivity {
 
     public void clearHistory(View view) {
         DatabaseHelper database = new DatabaseHelper(this);
-        database.cleanDatebase();
+        database.cleanData();
         TextView textView = findViewById(R.id.ViewHistory);
         String History = database.getData().toString();
         textView.setText(History);

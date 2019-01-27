@@ -6,28 +6,27 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class Database extends SQLiteOpenHelper {
-    private static final String database_name = "Historia";
-    protected static final String database_table = "Historiaa";
-    private static final String database_id_column = "ID";
-    protected static final String database_patch = "Equation";
+    private static final String databaseName = "History";
+    protected static final String databaseTable = "SaveEquation";
+    private static final String databaseIdColumn = "ID";
+    protected static final String databasePath = "Equation";
 
-    private static final String database_entries =
-            "CREATE TABLE " + database_table + "(" + database_id_column + " INTEGER PRIMARY KEY AUTOINCREMENT," + database_patch + " TEXT)";
-    protected static final String database_entries_delete = "DROP TABLE IF EXISTS " + database_table;
+    private static final String databaseEntries =
+            "CREATE TABLE " + databaseTable + "(" + databaseIdColumn + " INTEGER PRIMARY KEY AUTOINCREMENT," + databasePath + " TEXT)";
+    protected static final String databaseEntriesDelete = "DROP TABLE IF EXISTS " + databaseTable;
 
     public Database(Context context) {
-        super(context, database_name, null, 1);
+        super(context, databaseName, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(database_entries);
-
+        db.execSQL(databaseEntries);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(database_entries_delete);
+        db.execSQL(databaseEntriesDelete);
         onCreate(db);
     }
 }
